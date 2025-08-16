@@ -2,39 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Love Meter Design System - Romantic & Elegant
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Romantic Color Palette */
+    --background: 340 30% 97%;
+    --foreground: 340 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 340 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 340 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Love-themed Primary Colors */
+    --primary: 350 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 350 70% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 40% 95%;
+    --secondary-foreground: 340 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 340 20% 95%;
+    --muted-foreground: 340 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 320 60% 85%;
+    --accent-foreground: 340 15% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 90%;
+    --input: 340 20% 95%;
+    --ring: 350 80% 60%;
+
+    /* Love Meter Specific Colors */
+    --love-gradient-start: 350 80% 60%;
+    --love-gradient-end: 320 70% 70%;
+    --love-meter-bg: 340 15% 92%;
+    --love-meter-fill: 350 80% 60%;
+    --love-glow: 350 70% 70%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--love-gradient-start)), hsl(var(--love-gradient-end)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(340 25% 95%));
+    
+    /* Shadows */
+    --shadow-romantic: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--love-glow) / 0.4);
 
     --radius: 0.5rem;
 

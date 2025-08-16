@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				love: {
+					gradient: {
+						start: 'hsl(var(--love-gradient-start))',
+						end: 'hsl(var(--love-gradient-end))'
+					},
+					meter: {
+						bg: 'hsl(var(--love-meter-bg))',
+						fill: 'hsl(var(--love-meter-fill))'
+					},
+					glow: 'hsl(var(--love-glow))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +74,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'romantic': 'var(--gradient-romantic)',
+				'soft': 'var(--gradient-soft)'
+			},
+			boxShadow: {
+				'romantic': 'var(--shadow-romantic)',
+				'glow': 'var(--shadow-glow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +104,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'meter-fill': {
+					from: {
+						width: '0%'
+					},
+					to: {
+						width: 'var(--meter-width)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-love': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'meter-fill': 'meter-fill 2s ease-out forwards',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-love': 'pulse-love 2s ease-in-out infinite'
 			}
 		}
 	},

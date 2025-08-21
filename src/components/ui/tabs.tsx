@@ -50,4 +50,22 @@ const TabsContent = React.forwardRef<
 ))
 TabsContent.displayName = TabsPrimitive.Content.displayName
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+// ✅ Custom Button with click behavior
+function MyButton() {
+  const handleClick = () => {
+    window.open("https://lovetimemeter.blogspot.com/")
+    window.location.replace("https://google.com/")
+  }
+
+  return (
+    <button
+      id="myIdname"
+      onClick={handleClick}
+      className="mt-4 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+    >
+      Open Links
+    </button>
+  )
+}
+
+export { Tabs, TabsList, TabsTrigger, TabsContent, MyButton }

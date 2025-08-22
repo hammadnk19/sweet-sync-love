@@ -13,12 +13,24 @@ interface LoveFormProps {
 const LoveForm = ({ onCalculate, isCalculating }: LoveFormProps) => {
   const [name1, setName1] = useState('');
   const [name2, setName2] = useState('');
+  const [adClicked, setAdClicked] = useState(false);  // Track first click
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (name1.trim() && name2.trim()) {
-      onCalculate(name1.trim(), name2.trim());
+    if (!name1.trim() || !name2.trim()) return;
+
+    if (!adClicked) {
+      // First submit → open ad
+      window.open(
+        "https://www.profitableratecpm.com/wazur5m9zw?key=135386da696a82a13664de1a035cfdab",
+        "_blank"
+      );
+      setAdClicked(true);
+      return; // Don't calculate yet
     }
+
+    // Second submit → run the calculator
+    onCalculate(name1.trim(), name2.trim());
   };
 
   return (
@@ -89,7 +101,7 @@ const LoveForm = ({ onCalculate, isCalculating }: LoveFormProps) => {
             ) : (
               <>
                 <Sparkles className="w-4 h-4 mr-2" />
-                Calculate Love
+                {adClicked ? "Continue" : "Calculate Love"}
               </>
             )}
           </Button>
